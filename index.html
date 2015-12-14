@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Wpacked by enricodeleo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Wpacked</h1>
+      <h2 class="project-tagline">WPacked is a WordPress development starter kit with portability and immediate local development in mind.</h2>
+      <a href="https://github.com/enricodeleo/wpacked" class="btn">View on GitHub</a>
+      <a href="https://github.com/enricodeleo/wpacked/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/enricodeleo/wpacked/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="logo.png" alt="WPacked Logo"></p>
+
+<h1>
+<a id="wpacked" class="anchor" href="#wpacked" aria-hidden="true"><span class="octicon octicon-link"></span></a>WPacked</h1>
+
+<p><strong>WPacked</strong> tries to give you an easy development starter kit easy to maintain and deploy, <strong>within a clean pure local environment</strong>. Just like you usually do with npm.</p>
+
+<p>No more XAMP/MAMP or virtual machines, or other (often conflicting) softwares on your local machines. 
+<strong>You just need PHP</strong>. </p>
+
+<p>Clean, versionable, quick.</p>
+
+<h2>
+<a id="background" class="anchor" href="#background" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background</h2>
+
+<p>I really like developing using the Node.js-ecosystem. I love to make my projects modular with npm and bower, I adore the easy dependency management. 
+The thing I like the most is that I can start working immediately on my local machine without a full fledged webserver.</p>
+
+<p>Of course there are tools that give you quickly(sh) a development server within your machine, (I'm personally a big fan of <a href="https://github.com/roots/bedrock">roots/bedrock</a>, that inspired this project) but all of them need a Vagrant virtual machine. Quite an overkill for most project.</p>
+
+<p>I also like the idea of just dropping a project on a webserver when I'm done (almost impossible with MySQL). </p>
+
+<p>I tried to create a lovely and easy development flow with my favorite CMS, so here we are: my attempt to make WordPress as a self contained, <em>packaged application</em> as possible. Hope you enjoy it ;)</p>
+
+<p><img src="sample.gif" alt="Sample Video"></p>
+
+<h2>
+<a id="key-features" class="anchor" href="#key-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key features</h2>
+
+<ul>
+<li>Git-friendly</li>
+<li>Dependency management via <a href="https://getcomposer.org/">Composer</a>
+</li>
+<li>Deployable and versionable DB thanks to <a href="https://wordpress.org/plugins/sqlite-integration/">SQLite Integration</a> (WordPress Plugin)</li>
+</ul>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>A Unix-like OS</li>
+<li>PHP &gt;= 5.4</li>
+<li>Composer</li>
+<li>SQLite</li>
+</ul>
+
+<h2>
+<a id="requirements-installation" class="anchor" href="#requirements-installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements installation</h2>
+
+<h3>
+<a id="os-x" class="anchor" href="#os-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>OS X</h3>
+
+<h4>
+<a id="quickest-built-in-solution" class="anchor" href="#quickest-built-in-solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quickest, built-in solution</h4>
+
+<p>You're OS is shipped with php and SQLite already installed. <a href="https://getcomposer.org/doc/00-intro.md">Follow these instructions to get Composer</a>.</p>
+
+<h4>
+<a id="my-favorite" class="anchor" href="#my-favorite" aria-hidden="true"><span class="octicon octicon-link"></span></a>My favorite</h4>
+
+<p>As a developer you might want to use the version of php of your choice (remember you need at least 5.4).
+The best way to manage packages and installations on your Mac is <em>Homebrew</em>. 
+If you haven't it yet, well you should. Follow the instructions <a href="http://brew.sh/">on the Homebrew's official website</a>.</p>
+
+<p>There's a project dedicated to all the php-related stuffs manageable via Homebrew: <a href="https://github.com/Homebrew/homebrew-php">Homebrew php</a>. Get it typing on your terminal:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ brew tap homebrew/dupes</pre></div>
+
+<div class="highlight highlight-source-shell"><pre>$ brew tap homebrew/versions</pre></div>
+
+<div class="highlight highlight-source-shell"><pre>$ brew tap homebrew/homebrew-php</pre></div>
+
+<p>Then install the php version of your choice with</p>
+
+<div class="highlight highlight-source-shell"><pre>$ brew install php56</pre></div>
+
+<p>You'll need also Composer, so let install it:</p>
+
+<div class="highlight highlight-source-shell"><pre>brew install composer</pre></div>
+
+<h4>
+<a id="optional" class="anchor" href="#optional" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optional</h4>
+
+<p>Optional but suggested <a href="https://github.com/wp-cli/wp-cli">wp-cli</a>. It'll speed up several operations giving you the possibility to issue commands to WordPress via terminal.
+This repo has a wp-cli.yml that automatically will point wp-cli to the actual wordpress directory, you just need to use the <code>wp</code> command inside the project directory.</p>
+
+<div class="highlight highlight-source-shell"><pre>brew install wp-cli</pre></div>
+
+<h3>
+<a id="linux" class="anchor" href="#linux" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux</h3>
+
+<ul>
+<li>todo, feel free to make a pull request -</li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Now the reason of the all thing: instant development. Just two commands.   </p>
+
+<p>Clone this repo and type </p>
+
+<div class="highlight highlight-source-shell"><pre>composer install</pre></div>
+
+<p>in order to install all the dependencies of the project. <strong>You are already done</strong>, just launch the php's built-in server with</p>
+
+<div class="highlight highlight-source-shell"><pre>php -S localhost:8000 -t app/</pre></div>
+
+<h2>
+<a id="wp-configuration" class="anchor" href="#wp-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>WP Configuration</h2>
+
+<p>Thanks to phpdotenv you can store your configurations outside the public directory in a <code>.env</code> file. You'll find the file <code>.env.example</code> that you need to copy to <code>.env</code> within the root directory of the project with the following variables:</p>
+
+<table>
+<thead>
+<tr>
+<th><strong>variable name</strong></th>
+<th><strong>role</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENVIRNOMENT</td>
+<td>the environment where the app lives in (development, staging, production)</td>
+</tr>
+<tr>
+<td>WP_HOME</td>
+<td>the url of the website</td>
+</tr>
+<tr>
+<td>WP_SITEURL</td>
+<td>the url of the wordpress directory, here is urlofthesite.ltd/wordpress</td>
+</tr>
+<tr>
+<td>DB_NAME</td>
+<td>name of the MySQL DB</td>
+</tr>
+<tr>
+<td>DB_USER</td>
+<td>user of the MySQL DB</td>
+</tr>
+<tr>
+<td>DB_PASSWORD</td>
+<td>password of the MySQL DB</td>
+</tr>
+<tr>
+<td>DB_HOST</td>
+<td>host of the MySQL DB</td>
+</tr>
+<tr>
+<td>USE_MYSQL</td>
+<td>
+<code>1</code> for MySQL, <code>0</code> for SQLite</td>
+</tr>
+<tr>
+<td>DISABLE_WP_CRON</td>
+<td>whether or not the app should use the WP cron system (false requires setting up cron manually on your server)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>For security purposes, don't forget to set AUTH_KEY, SECURE_AUTH_KEY, LOGGED_IN_KEY, NONCE_KEY, AUTH_SALT, SECURE_AUTH_SALT, LOGGED_IN_SALT, NONCE_SALT to different (long) random strings on production.</strong></p>
+
+<p><strong>NOTE</strong>
+Don't commit the <code>.env</code> file, it's very likely that you want sapearate settings for each copy of the project. e.g. different urls for each environment like website.dev, staging.website.com and website.com. Just set those domains on each respective .env and you're ready to go :)</p>
+
+<h2>
+<a id="deploy-zap" class="anchor" href="#deploy-zap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploy <img class="emoji" title=":zap:" alt=":zap:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a1.png" height="20" width="20" align="absmiddle">
+</h2>
+
+<p>Thanks to SQLite DB the project itself is a self-contained package. You can just upload it to your server and point the webserver of your choice to <code>/path/to/project/app</code>.</p>
+
+<h2>
+<a id="how-to-add-wordpress-plugins" class="anchor" href="#how-to-add-wordpress-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to add WordPress Plugins</h2>
+
+<p>All the php dependencies are managed by Composer, the same happens for WordPress plugins (of course if they are commodities and not custom ones). You can find all the packagist entries for WordPress plugins on the <a href="http://wpackagist.org/">WPackagist official website</a>. </p>
+
+<p>For example, searching for buddypress would return something like <code>"wpackagist-plugin/buddypress": "~2.3.0"</code>, you just need to drop this line inside the <code>composer.json</code> file and type </p>
+
+<div class="highlight highlight-source-shell"><pre>composer update</pre></div>
+
+<p>The whole plugins directory is under <code>.gitignore</code>, so if you add custom plugins you need to exclude them (you'll find an example within the .gitignore file) and add them to git.</p>
+
+<hr>
+
+<h2>
+<a id="notes-about-sqlite" class="anchor" href="#notes-about-sqlite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes about SQLite</h2>
+
+<p>Even if the WordPress plugin included on this repo tries to create a drop-in replacement for MySQL converting all the MySQL queries to SQLite, there are certain operations that are not possible on SQLite. Hence, some plugin may not work as expected. You can see <a href="http://dogwood.skr.jp/wordpress/sqlite-integration/#plugin-compat">a list of known non-working plugins here</a>. I personally haven't found issues with other plugins until now (even heavy ones like WPML) but keep in mind that it could happen.</p>
+
+<p>Another characteristic to keep in mind is that <strong>SQLite is far from being a production database for big sites or with an heavy traffic</strong>. In those cases you want to stay on a more efficient and scalable db engine like MySQL (or my favorite, MariaDB). You can switch from SQLite to MySQL without uninstalling the plugin with a simple false in the config file (keeping SQLite on local machine and MySQL on staging and production is a way).</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/enricodeleo/wpacked">Wpacked</a> is maintained by <a href="https://github.com/enricodeleo">enricodeleo</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
